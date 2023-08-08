@@ -3,4 +3,4 @@
 def pow(a, b):
     """Function return the power of two numbers"""
 
-    return (a ^ b)
+    return (a ** b)
