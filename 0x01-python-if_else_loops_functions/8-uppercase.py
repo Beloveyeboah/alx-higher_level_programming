@@ -8,4 +8,7 @@ def uppercase(str):
             upcount += convert
         else:
             upcount += i
-    print(upcount)
+    print("{}".format(upcount))
+
+my = "oNE of the  BEST SCHools"
+uppercase(my)
