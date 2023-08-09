@@ -2,14 +2,15 @@
 
 """Funtion print numbers from 1 to 10"""
 
+
 def fizzbuzz():
 
-    for i in range(1, 101):
-        if i % 3 == 0 and i % 5 == 0:
-            print("fizzbuzz ", end="")
-        elif i % 3 == 0:
-            print("Fizz ", end="")
-        elif i % 5 == 0:
+    for n in range(1, 101):
+        if n % 3 == 0 and n % 5 == 0:
+            print("FizzBuzz ", end="")
+        elif n % 5 == 0:
             print("Buzz ", end="")
+        elif n % 3 == 0:
+            print("Fizz ", end="")
         else:
-            print("{} ".format(i), end="")
+            print("{} ".format(n), end="")
