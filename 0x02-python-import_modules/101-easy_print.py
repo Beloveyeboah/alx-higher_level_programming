@@ -1,4 +1,5 @@
 #!/usr/bin/python3
 
 # CREATED BY OSEI YEBOAH ISAAC
-if __name__ == "__main__":
+
+import python_for_me
