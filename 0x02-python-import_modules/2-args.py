@@ -4,12 +4,13 @@
 
 if __name__ == "__main__":
     """This function prints of the command line"""
+
     import sys
 
     read = len(sys.argv) - 1
     if read == 0:
         print("0 arguments.")
-    if read == 1:
+    elif read == 1:
         print("1 argument: ")
     else:
         print("{} arguments:".format(read))
