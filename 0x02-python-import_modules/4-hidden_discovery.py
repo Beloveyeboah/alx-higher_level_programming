@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     import hidden_4
 
-    hid = dir(hidden_4)
-    for x in hid:
-        if hid[:2] != "__":
-            print(hid)
+    names = dir(hidden_4)
+    for x in names:
+        if x [:2] != "__":
+            print(x)
