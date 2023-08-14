@@ -3,7 +3,8 @@
 # CREATED BY OSEI YEBOAH ISAAC
 
 def print_matrix_integer(matrix=[[]]):
-    for x in matrix:
-        for i in x:
-            print("{:d}".format(i), end=" ")
-        print()
+    if matrix:
+        for column in range(len(matrix[0])):
+            for row in range(len(matrix)):
+                print("{:d}".format(matrix[column][row]), end=" ")
+            print()
