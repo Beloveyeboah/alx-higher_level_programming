@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 # CREATED BY OSEI YEBOAH ISAAC
+"""prints int in a matrix"""
 
 def print_matrix_integer(matrix=[[]]):
     if matrix:
