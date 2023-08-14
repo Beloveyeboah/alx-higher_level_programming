@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-import python_for_me
+builtins = __builtins__
+builtins.print("#pythoniscool")
+
