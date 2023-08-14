@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
 # CREATED BY OSEI YEBOAH ISAAC
+
 """prints int in a matrix"""
 
+
 def print_matrix_integer(matrix=[[]]):
-    if matrix:
-        for column in range(len(matrix[0])):
-            for row in range(len(matrix)):
-                print("{:d}".format(matrix[column][row]), end=" ")
-            print()
+
+    for col in matrix:
+        for row in col:
+            print("{:2d}".format(row), end=" ")
+        print()
