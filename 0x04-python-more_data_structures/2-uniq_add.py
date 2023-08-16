@@ -5,7 +5,7 @@
 def uniq_add(my_list=[]):
     """convert to set and sum"""
 
-    unique = set(my_list)
+    unique = list(set(my_list))
     result = sum(unique)
     return (result)
 
