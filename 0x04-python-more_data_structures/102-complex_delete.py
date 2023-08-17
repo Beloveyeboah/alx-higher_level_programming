@@ -5,7 +5,10 @@
 def complex_delete(a_dictionary, value):
     """deletes from a dictionary"""
 
-    new = {
-            key: val for key, val in a_dictionary.items() if val != value
-            }
-    return (new)
+    keys_rem = []
+    for key in a_dictionary:
+        if a_dictionary[key] == value:
+            keys_rem.append(key)
+    for key in keys_rem:
+        del a_dictionary[key]
+    return (a_dictionary)
