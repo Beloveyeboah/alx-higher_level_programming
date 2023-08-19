@@ -5,24 +5,24 @@
  * @p: the obj
  * Return: obj
  */
-void print_python_list(pyobject *p)
+void print_python_list(Pyobject *p)
 {
-        py_ssize_t size;
+        Py_ssize_t size;
         const char *itemtype;
-        pyobject *item;
+        Pyobject *item;
 
-        if (!pylist_check(p))
+        if (!Pylist_check(p))
         {
                 printf("error: input is not a valid python list.\n");
                 return;
         }
-        size = pylist_size(p);
+        size = Pylist_size(p);
         printf("[*] python list info\n");
         printf("[*] size of the list = %zd\n", size);
-        printf("[*] allocated = %zd\n", ((pylistobject *)p)->allocated);
-        for (py_ssize_t i = 0; i < size; i++)
+        printf("[*] allocated = %zd\n", ((Pylistobject *)p)->allocated);
+        for (Py_ssize_t <F9>i = 0; i < size; i++)
         {
-                item = pylist_getitem(p, i);
+                item = Pylist_getitem(p, i);
                 itemtype = item->ob_type->tp_name;
                 printf("element %zd: %s\n", i, itemtype);
         }
@@ -36,27 +36,27 @@ void print_python_list(pyobject *p)
  * @p: the objesct
  * Return: the obj
  */
-void print_python_bytes(pyobject *p)
+void print_python_bytes(Pyobject *p)
 {
-        py_ssize_t size;
-        py_ssize_t maxbytes;
+        Py_ssize_t size;
+        Py_ssize_t maxbytes;
         char *bytes;
 
-        if (!pybytes_check(p))
+        if (!Pybytes_check(p))
         {
                 printf("error: input is not a valid python bytes object.\n");
                 return;
         }
-        size = pybytes_size(p);
+        size = Pybytes_size(p);
         printf("[*] python bytes info\n");
         printf("[*] size of the object = %zd\n", size);
         printf("[*] bytes object contents: ");
         if (size > 0)
         {
                 maxbytes = 10;
-                bytes = pybytes_asstring(p);
+                bytes = Pybytes_asstring(p);
         }
-        for (py_ssize_t i = 0; i < size && i < maxbytes; i++)
+        for (Py_ssize_t i = 0; i < size && i < maxbytes; i++)
         {
                 printf("%02x", bytes[i] & 0xff);
         }
@@ -64,5 +64,6 @@ void print_python_bytes(pyobject *p)
         {
                 printf("...");
         }
+
         printf("\n");
 }
