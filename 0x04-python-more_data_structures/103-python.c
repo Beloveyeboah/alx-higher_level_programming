@@ -5,7 +5,6 @@
  * @p: the obj
  * Return: obj
  */
-<<<<<<< HEAD
 void print_python_list(PyObject *p)
 {
         Py_ssize_t size;
