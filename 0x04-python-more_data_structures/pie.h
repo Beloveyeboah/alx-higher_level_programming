@@ -2,6 +2,7 @@
 #define PIE_H
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <Python.h>
 
 void print_python_list(PyObject *p);
