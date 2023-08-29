@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-# CREATED BY OSEI YEBOAH ISAAC
+"""Creating a class Square"""
+
 
 class Square:
     """creating class of square"""
