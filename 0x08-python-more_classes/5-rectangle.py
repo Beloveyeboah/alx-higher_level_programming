@@ -2,8 +2,11 @@
 
 # CREATED BY BELOVEYEBOAH
 
-class Rectangle:
+"""class for a rectangle"""
 
+
+class Rectangle:
+    """defines a rectanle"""
     def __init__(self, width=0, height=0):
         """Args:
             width: The width of the new rectangle.
@@ -19,6 +22,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
+        """sets the width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -27,10 +31,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """gets heigth atrribute"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """sets the height of the height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -47,22 +53,21 @@ class Rectangle:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
-    def __str__(self):
-        """Return the printable representation of the Rectangle."""
+    def __str__(self) -> str:
+        """presents a diagram of the rectangle defined for an object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
-
-        rect = []
-        for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        return ("".join(rect))
+        rectangle = ""
+        for column in range(self.__height):
+            for row in range(self.__width):
+                rectangle += "#"
+            if column < self.__height - 1:
+                rectangle += "\n"
+        return (rectangle)
 
     def __repr__(self):
-        rect = "Rectangle(" + str(self.__width)
-        rect += ", " + str(self.__height) + ")"
-        return (rect)
+        """returns a string representation of the rectangle"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """sdtout a message for every deletion of the Rectangle."""
