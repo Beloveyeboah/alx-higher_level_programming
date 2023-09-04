@@ -2,6 +2,8 @@
 
 # CREATED BY BELOVEYEBOAH
 
+"""A class that defines a rectangle"""
+
 
 class Rectangle:
     """creates a rectangle"""
