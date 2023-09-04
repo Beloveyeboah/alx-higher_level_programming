@@ -3,7 +3,7 @@
 # CREATED BY BELOVEYEBOAH
 
 class Rectangle:
-    
+
     def __init__(self, width=0, height=0):
         """Args:
             width: The width of the new rectangle.
