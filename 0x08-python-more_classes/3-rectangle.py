@@ -6,6 +6,7 @@
 
 
 class Rectangle:
+    """ths define a rectange"""
     def __init__(self, width=0, height=0):
         """ Args:
             width: The width of the new rectangle.
