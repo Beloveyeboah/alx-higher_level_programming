@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+""""class that defines a rectangle"""
+
 # CREATED BY BELOVEYEBOAH
 
 
@@ -14,10 +16,12 @@ class Rectangle:
 
     @property
     def width(self):
+        """retrive width attribute of class"""
         return (self.__width)
 
     @width.setter
     def width(self, value):
+        """set the width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -26,10 +30,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """retrive heights attribute"""
         return (self.__height)
 
     @height.setter
     def height(self, value):
+        """sets the height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
