@@ -2,6 +2,9 @@
 
 # CREATED BY OSEI YEBPAH ISAAC
 
+"""return sum of int"""
+
+
 def add_integer(a, b=98):
     """ return addition of integers"""
     if not isinstance(a, (int, float)):
