@@ -2,6 +2,7 @@
 
 """this module prints squares"""
 
+
 def print_square(size):
     """This function prints a square with the character #
 

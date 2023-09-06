@@ -2,6 +2,7 @@
 
 """prints a text with 2 new lines"""
 
+
 def text_indentation(text):
     """
     Args:
