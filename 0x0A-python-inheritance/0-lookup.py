@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" attributes look up function """
+
+
 # CREATED: BELOVE YEBOAH ISAAC
 
 def lookup(obj):
