@@ -41,7 +41,7 @@ class TestMaxInteger(unittest.TestCase):
         testing_list = [0.000009, 0.1, 0.007, 0.002]
         self.assertEqual(max_integer(testing_list), 0.1)
 
-     def test_ordered_list(self):
+    def test_ordered_list(self):
         """Test an ordered list of integers."""
         ordered = [1, 2, 3, 4]
         self.assertEqual(max_integer(ordered), 4)
@@ -50,6 +50,3 @@ class TestMaxInteger(unittest.TestCase):
         """Test a list with a beginning max value."""
         max_at_beginning = [4, 3, 2, 1]
         self.assertEqual(max_integer(max_at_beginning), 4)
-
-    if __name__ == '__main__':
-    unittest.main()
