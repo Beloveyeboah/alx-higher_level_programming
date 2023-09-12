@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-import json
-
 """ defines a func that retuens json obj"""
+
+import json
 
 
 def from_json_string(my_str):
