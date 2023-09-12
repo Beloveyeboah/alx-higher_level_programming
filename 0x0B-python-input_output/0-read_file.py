@@ -7,4 +7,4 @@ def read_file(filename=""):
     """ reads from stdin"""
 
     with open(filename, encoding="utf-8") as _file:
-        print(_file.read(), end=" ")
+        print(_file.read(), end="")
