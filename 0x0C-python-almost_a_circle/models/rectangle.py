@@ -17,54 +17,79 @@ class Rectangle(Base):
             y
             """
 
-        self._width = width
-        self._height = height
-        self._x = x
-        self._y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
     def width(self):
         """gets the attribute width"""
 
-        return self._width
+        return self.__width
 
     @width.setter
     def width(self, value):
         """sets the value of width"""
 
-        self._width = value
+        if (type(value) is not int):
+            raise TypeError("width must be an integer")
+
+        if value <= 0:
+            raise ValueError("width must be > 0")
+
+        self.__width = value
 
     @property
     def height(self):
         """"gets the attribute height"""
 
-        return self._height
+        return self.__height
 
     @height.setter
     def height(self, value):
         """sets the value of height"""
+
+        if (type(value) is not int):
+            raise TypeError("height must be an integer")
+
+        if value <= 0:
+            raise ValueError("height must be > 0")
         
-        self._heigth = value
+        self.__heigth = value
 
     @property
     def x(self):
         """gets the attribute x"""
 
-        return self._x
+        return self.__x
 
     @x.setter
     def x(self, value):
         """gets the value of x"""
 
-        self._x = value
+        if (type(value) is not int):
+            raise TypeError("x must be an integer")
+
+        if value < 0:
+            raise ValueError("x must be >= 0")
+
+        self.__x = value
 
     @property
     def y(self):
         """gets the attribute y"""
 
-        return self._y
+        return self.__y
 
     @y.setter
     def y(self, value):
-        self._y = value
+        """sets the value for y"""
+
+        if (type(value) is not int):
+            raise TypeError("y must be an integer")
+
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
