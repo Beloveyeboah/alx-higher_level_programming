@@ -34,3 +34,15 @@ class Base:
                 raise TypeError("Each item in list must be a dictionary")
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """saves json into a file"""
+
+        file_name = cls.__name__ + ".json"
+        with open(file_name, "w") as f:
+            if list_objs == None:
+                f.write("[]")
+            else:
+                json_dict = [conv.to_dictionary() for conv in list_objs]
+                f.write(Base.to_json_string(json_dict))
