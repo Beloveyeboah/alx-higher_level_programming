@@ -114,3 +114,27 @@ class Rectangle(Base):
         """used to print in strings"""
 
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """method for arbituary arguments"""
+
+        n = len(args)
+        if args and n != 0:
+            count = 0
+            for i in args:
+                if count == 0:
+                    if i is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = i
+                elif count == 1:
+                    self.width = i
+                elif count == 2:
+                    self.height = i
+                elif count == 3:
+                    self.x = i
+                elif count == 4:
+                    self.y = i
+                count += 1
+
+
