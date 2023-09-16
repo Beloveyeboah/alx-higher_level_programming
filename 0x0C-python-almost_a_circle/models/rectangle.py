@@ -56,8 +56,7 @@ class Rectangle(Base):
 
         if value <= 0:
             raise ValueError("height must be > 0")
-        
-        self.__heigth = value
+        self.__height = value
 
     @property
     def x(self):
@@ -97,4 +96,16 @@ class Rectangle(Base):
     def area(self):
         """sets the method area"""
 
-        return self.__heigth * self.__width
+        return self.__height * self.__width
+
+    def display(self):
+        """define display method to print #"""
+
+        for y in range(self.y):
+            print("")
+        for row in range(self.__height):
+            for x in range(self.x):
+                print(" ", end="")
+            for column in range(self.__width):
+                print("#", end="")
+            print()
