@@ -14,7 +14,7 @@ class Base:
     def __init__(self, id=None):
         """args - id"""
 
-        if id != None:
+        if id is not None:
             self.id = id
 
         else:
@@ -41,8 +41,17 @@ class Base:
 
         file_name = cls.__name__ + ".json"
         with open(file_name, "w") as f:
-            if list_objs == None:
+            if list_objs is None:
                 f.write("[]")
             else:
                 json_dict = [conv.to_dictionary() for conv in list_objs]
                 f.write(Base.to_json_string(json_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """reads from a json. file"""
+
+        if json_string is None or json_string == []:
+            return "[]"
+        else:
+            return json.loads(json_string)
