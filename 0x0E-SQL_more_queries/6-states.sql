@@ -3,4 +3,5 @@
 -- : name VARCHAR(256) can’t be null
 -- If the database hbtn_0d_usa already exists, your script should not fail
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states (id INT NOT AUTO_INCREMENT, name VARCHAR(256) NOT NULL, PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(256) NOT NULL);
