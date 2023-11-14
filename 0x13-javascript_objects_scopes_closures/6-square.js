@@ -1,22 +1,21 @@
 #!/usr/bin/node
-
 /**
- * Square class that inherits from squareExt class
+ * Square class that inherits Square
  */
-const SquareExt = require('./5-square');
-class Square extends SquareExt {
+const SquareEnt = require('./5-square');
+
+class Square extends SquareEnt {
   charPrint (c) {
-	  if (c === undefined) {
-		  c = 'X';
-	  }
-
-	  let display = '';
-	  for (let y = 0; y < this.height; y++) {
-		  display += c.repeat(this.width) + '\n';
-	  }
-
-	  console.log(display);
+    const display = c === undefined ? 'X' : c;
+    for (let i = 0; i < this.height; i++) {
+      let A = '';
+      let y = 0;
+      while (y < this.width) {
+        A += display;
+        y++;
+      }
+      console.log(A);
+    }
   }
 }
-
 module.exports = Square;
