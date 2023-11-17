@@ -21,12 +21,12 @@ def main():
                         charset="utf8"
                             )
     cur = conn.cursor()
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+                ORDER BY states.id ASC"
     cur.execute(query)
     row = cur.fetchall()
     for r in row:
-        if r[1][0] = 'N':
-            print(r)
+        print(r)
     cur.close()
     conn.close()
 
