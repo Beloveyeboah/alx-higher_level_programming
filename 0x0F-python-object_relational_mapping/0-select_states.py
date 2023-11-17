@@ -3,20 +3,19 @@
 # a script that lists all states from the database hbtn_0e_0_usa:
 
 
-from MySQLdb import _mysql
+import MySQLdb
+from sys import argv
 
-def list_states_mysql(username, password, database_name):
-    """connect to mysql"""
 
-    db = MySQLdb.connect(user = username, passwd = password, db = database_name, host = "localhost", port = 3306)
+if __name__ == "__main__":
+    """retrive data of states from the db"""
 
-    cursor = db.cursor()
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3])
 
-    cursor.execute("SELECT * FROM states ORDER BY ASC")
-    rows = cursor.fetchall()
+    _cursor = db.cursor()
+
+    _cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = _cursor.fetchall()
     for row in rows:
         print(row)
-    cursor.close()
-
-    if __name__ == "__main__":
-        list_states_mysql("your_username", "your_password", "hbtn_0e_0_usa")
+    _cursor.close()
