@@ -25,7 +25,8 @@ def main():
     cur.execute(query)
     row = cur.fetchall()
     for r in row:
-        print(r)
+        if r[1][0] = 'N':
+            print(r)
     cur.close()
     conn.close()
 
