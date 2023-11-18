@@ -28,7 +28,7 @@ if __name__ == "__main__":
         cur.execute(query)
         row = cur.fetchall()
         for r in row:
-            if r[1] = search_state:
+            if r[1] == search_state:
                 print(r)
         cur.close()
         conn.close()
