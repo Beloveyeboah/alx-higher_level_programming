@@ -30,10 +30,9 @@ if __name__ == "__main__":
         cur.execute(query, (state_arg,))
         row = cur.fetchall()
         if row is not None:
-              print(", ".join([r[0] for r in row]))
+            print(", ".join([r[0] for r in row]))
         cur.close()
         conn.close()
-
 
     except MySQLdb.Error as e:
         print("Error connecting to MySQL database", str(e))
