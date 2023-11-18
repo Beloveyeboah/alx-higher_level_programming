@@ -23,14 +23,15 @@ if __name__ == "__main__":
     try:
         cur = conn.cursor()
         search_state = argv[4]
-        query = "SELECT * FROM states WHERE name = '{}' \
-                ORDER BY id ASC".format(search_state)
-        cur.execute(query)
+        query = "SELECT * FROM states WHERE name = %s \
+                ORDER BY id ASC"
+        cur.execute(query, (search_state,))
         row = cur.fetchall()
         for r in row:
-            print(r)
+            if r[1] == search_state:
+                print(r)
         cur.close()
         conn.close()
 
-    except MySQLdb.Erroe as e:
+    except MySQLdb.Error as e:
         print("Error connecting to MySQL database", str(e))
