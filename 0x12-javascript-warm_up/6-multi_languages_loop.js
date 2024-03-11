@@ -2,8 +2,6 @@
 
 const array = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-array.forEach(myfunc);
-
-function myfunc(item) {
+array.forEach((item) => {
 	console.log(item);
-}
+});
