@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-const array = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+const line = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-array.forEach((item) => {
-	console.log(item);
-});
+for (let i = 0; i < line.length; i++) {
+  console.log(line[i]);
+}
