@@ -10,12 +10,5 @@ You must use console.log(...) to print all output
 You are not allowed to use var
 */
 
-const args = process.argv.length;
-
-if (args === 2) {
-	console.log('No argument');
-} else if (args === 3) {
-	console.log('Argument found');
-} else {
-	console.log('Arguments found');
-}
+const count = process.argv.length;
+console.log(count === 2 ? 'No argument' : count === 3 ? 'Argument found' : 'Arguments found');
