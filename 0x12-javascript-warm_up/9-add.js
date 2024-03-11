@@ -1,8 +1,7 @@
 #!/usr/bin/node
 
 function add (a, b) {
-	let sum = a + b;
-  return (sum);
+  return (a + b);
 }
 
 const arg1 = parseInt(process.argv[2]);
