@@ -1,6 +1,9 @@
 #!/usr/bin/node
-class Rectangle {
-}
+
+/*
+ * rite an empty class Rectangle
+ */
+class Rectangle {}
 
 
 module.exports = Rectangle;
