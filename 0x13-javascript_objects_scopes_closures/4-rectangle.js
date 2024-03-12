@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-/**
+/*
+ *
  * Write a class Rectangle that defines a rectangle:
 
 You must use the class notation for defining your class
@@ -19,7 +20,8 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
-print () {
+
+  print () {
     for (let k = 0; k < this.height; k++) {
       console.log('X'.repeat(this.width));
     }
@@ -29,8 +31,7 @@ print () {
     if (!this.width || !this.height) {
       return;
     }
-    this.width = this.height;
-    this.height = this.width;
+    [this.width, this.height] = [this.height, this.width];
   }
 
   double () {
