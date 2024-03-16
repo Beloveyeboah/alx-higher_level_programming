@@ -3,7 +3,6 @@
 . SQL Injection...
 TODO:
     1. write one that is safe from MySQL injections!
-    2. 
     """
 
 
