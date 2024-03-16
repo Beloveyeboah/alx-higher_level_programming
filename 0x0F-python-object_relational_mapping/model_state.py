@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-
 """
-define class  state
-
-
+Write a python file that contains the class
+definition of a State
 """
-from sqlalchemy import Table, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
 
 
 class State(Base):
     """
-    creating a class state
+        State class
     """
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False)
