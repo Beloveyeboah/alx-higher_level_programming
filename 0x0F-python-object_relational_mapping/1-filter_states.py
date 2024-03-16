@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 """
-Write a script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa:
+retrive data "states" from hbtn_0e_0_usa"
+TODO:
+    1. print from state
+    2. name starting with N (upper N)
+    """
 
-"""
 
 from sys import argv
 import MySQLdb
 
 
 def main():
-    connect = MySQLdb.connect(
+    conn = MySQLdb.connect(
                         host="localhost",
                         port=3306,
                         user=argv[1],
@@ -17,15 +20,16 @@ def main():
                         db=argv[3],
                         charset="utf8"
                             )
-    cur = connect.cursor()
-    query = "SELECT id, name FROM states WHERE name LIKE BINARY 'N%' \
+    cur = conn.cursor()
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
                 ORDER BY states.id ASC"
     cur.execute(query)
-    f_query = cur.fetchall()
-    for info in f_query:
-        print(info)
+    row = cur.fetchall()
+    for r in row:
+        print(r)
     cur.close()
-    connect.close()
+    conn.close()
+
 
 if __name__ == "__main__":
     main()
