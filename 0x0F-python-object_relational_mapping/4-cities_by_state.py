@@ -1,13 +1,18 @@
 #!/usr/bin/python3
 """
-Write a script that lists all cities from the database hbtn_0e_4_usa
-
+retrive data "states" from hbtn_0e_0_usa"
 TODO:
-    Results must be sorted in ascending order by cities.id
+    1.  lists all cities from the database hbtn_0e_4_usa
+    2.
     """
 
+
+from sys import argv
+import MySQLdb
+
+
 if __name__ == "__main__":
-    connection = MySQLdb.connect(
+    conn = MySQLdb.connect(
                         host="localhost",
                         port=3306,
                         user=argv[1],
@@ -16,15 +21,16 @@ if __name__ == "__main__":
                         charset="utf8"
                         )
     try:
-        cur = connection.cursor()
+        cur = conn.cursor()
         query = "SELECT cities.id, cities.name, states.name FROM cities \
                 JOIN states ON cities.state_id=states.id \
                 ORDER BY cities.id ASC"
         cur.execute(query)
+        row = cur.fetchall()
         for r in row:
             print(r)
         cur.close()
-        connection.close()
+        conn.close()
 
     except MySQLdb.Error as e:
         print("Error connecting to MySQL database", str(e))
