@@ -1,4 +1,3 @@
 #!/bin/bash
-#  a Bash script that takes in a URL and displays all HTTP methods the server will accept.
-# You have to use curl
+# sends a DELETE request to an URL and displays the body of the response
 curl -sX DELETE "$1"
