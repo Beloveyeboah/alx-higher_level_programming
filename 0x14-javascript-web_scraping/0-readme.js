@@ -6,18 +6,13 @@
  *  2. The content of the file must be read in utf-8
  *  If an error occurred during the reading, print the error object
  */
-
 const fs = require('fs'); /* load the fs modole */
+const filename = process.argv[2]; /* loads the process to access argv */
 
-const process = require('process'); /* loads the process to access argv */
-
-const filePath = process.argv[2] /* gets the path of the file o read */
-
-fs.readFile (filePath, 'utf-8', (err, data) => {
-	if (err) {
-		console.error(err);
-	}
-	else {
-		console.log(data);
-	}
+fs.readFile(filename, 'utf-8', (err, content) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(content);
+  }
 });
